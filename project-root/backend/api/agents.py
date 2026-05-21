@@ -124,7 +124,7 @@ Return ONLY the raw JSON output.
         from groq import Groq
         client = Groq(api_key=settings.GROQ_API_KEY)
         response = client.chat.completions.create(
-            model="mixtral-8x7b-32768",
+            model="llama-3.3-70b-versatile",
             messages=[
                 {"role": "system", "content": "You are a professional multi-agent coordinator that outputs strict JSON."},
                 {"role": "user", "content": prompt}

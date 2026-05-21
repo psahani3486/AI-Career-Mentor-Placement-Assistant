@@ -79,18 +79,42 @@ async def send_message(
         messages.append({"role": msg["role"], "content": msg["content"]})
     messages.append({"role": "user", "content": req.message})
 
-    # Call Groq
+    # Call Groq with timeout
+    import time
+    import asyncio
+    start_time = time.time()
     try:
         from groq import Groq
-        client = Groq(api_key=settings.GROQ_API_KEY)
+        import httpx
+        
+        if not settings.GROQ_API_KEY:
+            raise ValueError("GROQ_API_KEY is not configured in environment variables")
+        
+        print(f"[CHAT] Initializing Groq client...")
+        # Create Groq client with custom HTTP client that has a timeout
+        http_client = httpx.Client(timeout=20.0)  # 20 second timeout
+        client = Groq(api_key=settings.GROQ_API_KEY, http_client=http_client)
+        
+        print(f"[CHAT] Calling Groq API for message: {req.message[:50]}...")
         response = client.chat.completions.create(
-            model="mixtral-8x7b-32768",
+            model="llama-3.3-70b-versatile",
             messages=messages,
             max_tokens=1000,
             temperature=0.7,
         )
         ai_reply = response.choices[0].message.content
+        elapsed = time.time() - start_time
+        print(f"[CHAT] Groq API responded in {elapsed:.2f}s")
+        http_client.close()
+    except asyncio.TimeoutError as e:
+        elapsed = time.time() - start_time
+        print(f"[CHAT] Groq API Timeout after {elapsed:.2f}s")
+        ai_reply = "The AI service is currently unavailable (timeout). Please try again in a moment."
     except Exception as e:
+        elapsed = time.time() - start_time
+        print(f"[CHAT] Groq API Error after {elapsed:.2f}s: {str(e)}")
+        import traceback
+        traceback.print_exc()
         # Fallback response when API is unavailable
         ai_reply = (
             "I'm currently unable to connect to the AI service. "
