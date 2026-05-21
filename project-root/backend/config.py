@@ -33,8 +33,8 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
-    # ── OpenAI ────────────────────────────────────────────────────
-    OPENAI_API_KEY: Optional[str] = None
+    # ── Groq ──────────────────────────────────────────────────────
+    GROQ_API_KEY: Optional[str] = None
 
     # ── Google OAuth 2.0 ──────────────────────────────────────────
     GOOGLE_CLIENT_ID: Optional[str] = None

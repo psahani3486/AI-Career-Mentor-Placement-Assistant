@@ -1,7 +1,7 @@
 """
 AI Career Chat API router.
 
-Provides a conversational AI career mentor powered by OpenAI.
+Provides a conversational AI career mentor powered by Groq.
 """
 
 from datetime import datetime, timezone
@@ -79,12 +79,12 @@ async def send_message(
         messages.append({"role": msg["role"], "content": msg["content"]})
     messages.append({"role": "user", "content": req.message})
 
-    # Call OpenAI
+    # Call Groq
     try:
-        import openai
-        client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
+        from groq import Groq
+        client = Groq(api_key=settings.GROQ_API_KEY)
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="mixtral-8x7b-32768",
             messages=messages,
             max_tokens=1000,
             temperature=0.7,

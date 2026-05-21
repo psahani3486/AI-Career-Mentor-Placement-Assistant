@@ -85,7 +85,7 @@ def _run_crewai_roadmap(goal: str, skills_str: str, duration: int) -> Dict:
     except Exception:
         pass
 
-    # Standard high-quality AI roadmap generator using a structured OpenAI call
+    # Standard high-quality AI roadmap generator using a structured Groq call
     # This serves as a reliable core for the agentic process
     prompt = f"""You are an advanced multi-agent planning crew consisting of:
 1. CURRICULUM ARCHITECT AGENT (breaks down goals into step-by-step weekly milestones)
@@ -121,10 +121,10 @@ Return ONLY the raw JSON output.
 """
 
     try:
-        import openai
-        client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
+        from groq import Groq
+        client = Groq(api_key=settings.GROQ_API_KEY)
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="mixtral-8x7b-32768",
             messages=[
                 {"role": "system", "content": "You are a professional multi-agent coordinator that outputs strict JSON."},
                 {"role": "user", "content": prompt}

@@ -74,7 +74,7 @@ async def start_interview(
     
     skills_str = ", ".join(skills_list) if skills_list else "general computer science, system design, problem solving"
 
-    # Query OpenAI to generate 4 targeted questions
+    # Query Groq to generate 4 targeted questions
     prompt = f"""You are an expert tech recruiter/hiring manager. 
 Generate exactly 4 realistic interview questions for a candidate interviewing for a '{role}' position.
 The candidate has the following skills/experience: {skills_str}.
@@ -86,10 +86,10 @@ Example format:
 """
 
     try:
-        import openai
-        client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
+        from groq import Groq
+        client = Groq(api_key=settings.GROQ_API_KEY)
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="mixtral-8x7b-32768",
             messages=[
                 {"role": "system", "content": "You are a professional HR assistant that outputs strict JSON formats."},
                 {"role": "user", "content": prompt}
