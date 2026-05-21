@@ -12,6 +12,7 @@ from typing import Generator
 from config import settings
 
 
+# PostgreSQL engine configuration
 engine = create_engine(
     settings.DATABASE_URL,
     pool_pre_ping=True,

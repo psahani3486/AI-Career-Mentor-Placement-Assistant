@@ -25,12 +25,8 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # ── PostgreSQL ────────────────────────────────────────────────
+    # ── PostgreSQL (Production) ───────────────────────────────────
     DATABASE_URL: str = "postgresql://postgres:password@localhost:5432/career_mentor"
-
-    # ── MongoDB ───────────────────────────────────────────────────
-    MONGODB_URL: str = "mongodb://localhost:27017"
-    MONGODB_DB_NAME: str = "career_mentor"
 
     # ── JWT / Auth ────────────────────────────────────────────────
     SECRET_KEY: str = "change-me-in-production"
