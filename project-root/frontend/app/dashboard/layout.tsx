@@ -14,7 +14,7 @@ export default function DashboardLayout({
   useEffect(() => {
     const u = api.getUser();
     if (!u) {
-      // Redirect to login if unauthenticated
+      
       window.location.href = "/login";
     } else {
       setUser(u);
@@ -34,18 +34,18 @@ export default function DashboardLayout({
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white flex overflow-hidden">
-      {/* Sidebar Navigation */}
+      {}
       <Sidebar />
 
-      {/* Main Content Area */}
+      {}
       <div className="flex-1 flex flex-col min-w-0 lg:pl-64 min-h-screen overflow-y-auto">
-        {/* Top Header */}
+        {}
         <header className="sticky top-0 z-30 glass border-b border-white/5 backdrop-blur-md px-6 py-4 flex items-center justify-between">
           <h2 className="text-sm font-semibold text-muted uppercase tracking-wider hidden sm:block">
             AI Placement Assistant Hub
           </h2>
           <div className="flex items-center gap-4 ml-auto">
-            {/* User Meta */}
+            {}
             <div className="flex items-center gap-3">
               <div className="hidden sm:block text-right">
                 <p className="text-xs font-semibold text-white">{user.name}</p>
@@ -58,7 +58,7 @@ export default function DashboardLayout({
           </div>
         </header>
 
-        {/* Dynamic Inner page content */}
+        {}
         <main className="flex-1 p-6 sm:p-8 max-w-7xl mx-auto w-full relative z-10">
           {children}
         </main>

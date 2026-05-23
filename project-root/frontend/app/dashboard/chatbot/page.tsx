@@ -31,7 +31,7 @@ export default function ChatbotPage() {
         const h = await api.getChatHistory();
         setHistory(h);
         if (h.length > 0) {
-          // Default to latest session
+          
           setSessionId(h[0].id);
           setMessages(h[0].messages);
         }
@@ -43,14 +43,14 @@ export default function ChatbotPage() {
   }, []);
 
   useEffect(() => {
-    // Scroll to bottom on new message
+    
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
   const handleSend = async (text: string) => {
     if (!text.trim() || loading) return;
 
-    // 1. Add user message locally
+    
     const userMsg = {
       role: "user",
       content: text,
@@ -61,17 +61,17 @@ export default function ChatbotPage() {
     setLoading(true);
 
     try {
-      // 2. Post to API
+      
       const res = await api.sendChatMessage(text, sessionId);
       
-      // Update session if it's new
+      
       if (!sessionId && res.session_id) {
         setSessionId(res.session_id);
         const updatedHistory = await api.getChatHistory();
         setHistory(updatedHistory);
       }
 
-      // Add assistant response locally
+      
       const assistantMsg = {
         role: "assistant",
         content: res.reply,
@@ -110,7 +110,7 @@ export default function ChatbotPage() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Header */}
+      {}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -130,7 +130,7 @@ export default function ChatbotPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         
-        {/* Sessions Sidebar (Left Column) */}
+        {}
         <div className="lg:col-span-1 glass rounded-2xl p-5 border-white/5 space-y-4 max-h-[500px] overflow-y-auto">
           <h2 className="text-xs font-semibold text-white uppercase tracking-wider">
             Mentoring Sessions
@@ -158,10 +158,10 @@ export default function ChatbotPage() {
           )}
         </div>
 
-        {/* Chat Main Window (Right Column) */}
+        {}
         <div className="lg:col-span-3 flex flex-col glass rounded-3xl border-white/5 overflow-hidden h-[600px]">
           
-          {/* Scrollable Message Box */}
+          {}
           <div className="flex-1 p-6 overflow-y-auto space-y-6 scrollbar-thin">
             {messages.map((m, index) => (
               <ChatBubble
@@ -182,7 +182,7 @@ export default function ChatbotPage() {
             <div ref={scrollRef} />
           </div>
 
-          {/* Quick suggestions */}
+          {}
           {messages.length <= 2 && (
             <div className="px-6 py-3 border-t border-white/5 bg-[#0a0a0f]/40 flex flex-wrap gap-2.5">
               {quickPrompts.map((p, idx) => (
@@ -197,7 +197,7 @@ export default function ChatbotPage() {
             </div>
           )}
 
-          {/* Input Box */}
+          {}
           <div className="p-4 border-t border-white/5 bg-[#08080c]/60 flex items-center gap-3">
             <input
               type="text"

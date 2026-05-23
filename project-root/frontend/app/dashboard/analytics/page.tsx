@@ -38,7 +38,7 @@ export default function Analytics() {
           avgResumeScore: parseFloat(avgScore as string),
           totalChats: chats.length,
           totalInterviews: interviews.length,
-          totalRoadmaps: 1, // Placeholder
+          totalRoadmaps: 1, 
         });
       } catch (err: any) {
         setError(err.message || "Failed to load analytics");
@@ -64,7 +64,7 @@ export default function Analytics() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0a0f] to-[#1a1a2e] p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
+        {}
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold gradient-text mb-2">Analytics</h1>
           <p className="text-muted">Track your career mentoring progress and usage statistics</p>
@@ -76,7 +76,7 @@ export default function Analytics() {
           </div>
         )}
 
-        {/* Stats Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <StatCard
             label="Total Resumes"
@@ -110,7 +110,7 @@ export default function Analytics() {
           />
         </div>
 
-        {/* Detailed Analytics Section */}
+        {}
         <div className="glass rounded-3xl p-6 md:p-8">
           <h2 className="text-xl font-bold mb-4">Performance Overview</h2>
           <div className="space-y-4">

@@ -1,7 +1,4 @@
-/**
- * Frontend API Service Layer.
- * Wraps endpoints of the FastAPI backend on port 8000 with custom authentication headers.
- */
+
 
 const BASE_URL = "http://localhost:8000/api";
 
@@ -35,7 +32,7 @@ async function handleResponse<T>(response: Response): Promise<T> {
 }
 
 export const api = {
-  // ── Authentication ──
+  
   async register(name: string, email: string, password: string): Promise<any> {
     const res = await fetch(`${BASE_URL}/auth/register`, {
       method: "POST",
@@ -77,7 +74,7 @@ export const api = {
     return null;
   },
 
-  // ── Resume Analyzer ──
+  
   async uploadResume(file: File): Promise<any> {
     const formData = new FormData();
     formData.append("file", file);
@@ -106,7 +103,7 @@ export const api = {
     return handleResponse<any[]>(res);
   },
 
-  // ── AI Chat Mentor ──
+  
   async sendChatMessage(message: string, sessionId?: string): Promise<any> {
     const res = await fetch(`${BASE_URL}/chat/`, {
       method: "POST",
@@ -124,7 +121,7 @@ export const api = {
     return handleResponse<any[]>(res);
   },
 
-  // ── RAG Knowledge Assistant ──
+  
   async ingestDocument(file: File): Promise<any> {
     const formData = new FormData();
     formData.append("file", file);
@@ -154,7 +151,7 @@ export const api = {
     return handleResponse<any[]>(res);
   },
 
-  // ── Mock Interview ──
+  
   async startInterview(interviewType: string, role?: string, skills?: string[]): Promise<any> {
     const res = await fetch(`${BASE_URL}/interview/start`, {
       method: "POST",
@@ -186,7 +183,7 @@ export const api = {
     return handleResponse<any[]>(res);
   },
 
-  // ── Multi-Agent Roadmap Planner ──
+  
   async generateRoadmap(goal: string, skills?: string[], durationWeeks = 8): Promise<any> {
     const res = await fetch(`${BASE_URL}/agents/roadmap`, {
       method: "POST",

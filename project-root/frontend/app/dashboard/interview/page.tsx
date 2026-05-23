@@ -11,18 +11,18 @@ export default function InterviewPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Active session parameters
+  
   const [interviewId, setInterviewId] = useState("");
   const [questions, setQuestions] = useState<string[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState("");
 
-  // Simulated metrics toggles
+  
   const [videoOn, setVideoOn] = useState(false);
   const [audioOn, setAudioOn] = useState(false);
 
-  // Result parameters
+  
   const [result, setResult] = useState<any>(null);
   const [history, setHistory] = useState<any[]>([]);
 
@@ -67,7 +67,7 @@ export default function InterviewPage() {
       setCurrentIdx(prev => prev + 1);
       setCurrentAnswer(answers[currentIdx + 1] || "");
     } else {
-      // Evaluate session
+      
       handleEvaluate(updatedAnswers);
     }
   };
@@ -99,7 +99,7 @@ export default function InterviewPage() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
           AI Mock <span className="gradient-text">Interview</span>
@@ -115,10 +115,10 @@ export default function InterviewPage() {
         </div>
       )}
 
-      {/* ── STAGE 1: SETUP ── */}
+      {}
       {stage === "setup" && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Config card */}
+          {}
           <div className="lg:col-span-2 glass rounded-3xl p-6 sm:p-8 border-white/5 space-y-6">
             <h2 className="text-lg font-bold text-white">Configure Interview Session</h2>
             
@@ -172,7 +172,7 @@ export default function InterviewPage() {
                 />
               </div>
 
-              {/* Feed simulation checkboxes */}
+              {}
               <div className="pt-4 border-t border-white/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <button
                   onClick={() => setVideoOn(!videoOn)}
@@ -224,7 +224,7 @@ export default function InterviewPage() {
             </div>
           </div>
 
-          {/* History */}
+          {}
           <div className="glass rounded-3xl p-6 border-white/5 space-y-4 max-h-[500px] overflow-y-auto lg:col-span-1">
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
               Past Evaluations
@@ -252,15 +252,15 @@ export default function InterviewPage() {
         </div>
       )}
 
-      {/* ── STAGE 2: INTERVIEW LOOP ── */}
+      {}
       {stage === "interview" && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Camera preview simulator & Question prompt (Left Column) */}
+          {}
           <div className="lg:col-span-2 space-y-6">
             <div className="glass rounded-3xl p-6 sm:p-8 border-white/5 space-y-6 relative overflow-hidden">
               
-              {/* Question metadata */}
+              {}
               <div className="flex items-center justify-between border-b border-white/5 pb-4">
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">
                   Question {currentIdx + 1} of {questions.length}
@@ -270,12 +270,12 @@ export default function InterviewPage() {
                 </span>
               </div>
 
-              {/* Question Text */}
+              {}
               <h3 className="text-lg sm:text-xl font-bold text-white leading-relaxed">
                 {questions[currentIdx]}
               </h3>
 
-              {/* Input for Answer */}
+              {}
               <div className="space-y-2">
                 <label className="block text-xs font-semibold text-muted uppercase tracking-wider">
                   Your Answer Response
@@ -288,7 +288,7 @@ export default function InterviewPage() {
                 />
               </div>
 
-              {/* Navigation buttons */}
+              {}
               <div className="flex items-center justify-between pt-4">
                 <button
                   onClick={handlePrevQuestion}
@@ -308,13 +308,13 @@ export default function InterviewPage() {
             </div>
           </div>
 
-          {/* Web Cam Simulation Viewport (Right Column) */}
+          {}
           <div className="lg:col-span-1 space-y-6">
             <div className="glass rounded-3xl p-6 border-white/5 relative overflow-hidden flex flex-col items-center justify-center min-h-[300px] text-center bg-black/40">
               
               {videoOn ? (
                 <>
-                  {/* Camera view stub */}
+                  {}
                   <div className="w-full aspect-video rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center relative overflow-hidden">
                     <span className="absolute inset-0 border-t border-accent/20 animate-pulse pointer-events-none" />
                     <span className="text-xs text-accent font-medium uppercase tracking-widest animate-pulse">
@@ -351,10 +351,10 @@ export default function InterviewPage() {
         </div>
       )}
 
-      {/* ── STAGE 3: RESULT SHOWCASE ── */}
+      {}
       {stage === "result" && result && (
         <div className="space-y-8 animate-fade-in-up">
-          {/* Header */}
+          {}
           <div className="glass rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-white/5">
             <div>
               <h2 className="text-xl sm:text-2xl font-extrabold text-white">
@@ -374,9 +374,9 @@ export default function InterviewPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            {/* Primary Scores & General Feedback (Left Columns) */}
+            {}
             <div className="lg:col-span-2 space-y-6">
-              {/* Score card */}
+              {}
               <div className="glass rounded-3xl p-6 sm:p-8 border-white/5 space-y-6 bg-gradient-to-br from-primary/10 via-transparent to-transparent">
                 <div className="flex items-center gap-6">
                   <div className="w-20 h-20 rounded-2xl bg-white/[0.02] border-2 border-primary/20 flex items-center justify-center text-3xl font-extrabold text-white">
@@ -390,7 +390,7 @@ export default function InterviewPage() {
                   </div>
                 </div>
 
-                {/* Strengths & Improvements */}
+                {}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5 pt-6">
                   <div className="space-y-3">
                     <h4 className="text-sm font-semibold text-accent flex items-center gap-2">
@@ -423,7 +423,7 @@ export default function InterviewPage() {
 
               </div>
 
-              {/* Detailed Breakdown */}
+              {}
               <div className="glass rounded-3xl p-6 sm:p-8 border-white/5 space-y-6">
                 <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
                   Question-by-Question Diagnostics
@@ -446,10 +446,10 @@ export default function InterviewPage() {
               </div>
             </div>
 
-            {/* DL Sentiment & Analytics (Right Column) */}
+            {}
             <div className="lg:col-span-1 space-y-6">
               
-              {/* Emotion Metrics */}
+              {}
               {result.emotion_analysis && (
                 <div className="glass rounded-3xl p-6 border-white/5 space-y-4">
                   <h3 className="text-sm font-semibold text-white flex items-center gap-2">
@@ -474,7 +474,7 @@ export default function InterviewPage() {
                 </div>
               )}
 
-              {/* Voice Analytics */}
+              {}
               {result.voice_analysis && (
                 <div className="glass rounded-3xl p-6 border-white/5 space-y-4">
                   <h3 className="text-sm font-semibold text-white flex items-center gap-2">

@@ -47,7 +47,7 @@ export default function Settings() {
     e.preventDefault();
     setLoading(true);
     try {
-      // In a real app, you'd update the user profile via API
+      
       localStorage.setItem("career_mentor_user", JSON.stringify({
         ...user,
         ...formData,
@@ -69,7 +69,7 @@ export default function Settings() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0a0f] to-[#1a1a2e] p-4 md:p-8">
       <div className="max-w-2xl mx-auto">
-        {/* Header */}
+        {}
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold gradient-text mb-2">Settings</h1>
           <p className="text-muted">Manage your account and preferences</p>
@@ -87,7 +87,7 @@ export default function Settings() {
           </div>
         )}
 
-        {/* Profile Section */}
+        {}
         <div className="glass rounded-3xl p-6 md:p-8 mb-6">
           <h2 className="text-2xl font-bold mb-6">Profile Information</h2>
 
@@ -127,7 +127,7 @@ export default function Settings() {
           </form>
         </div>
 
-        {/* Preferences Section */}
+        {}
         <div className="glass rounded-3xl p-6 md:p-8 mb-6">
           <h2 className="text-2xl font-bold mb-6">Preferences</h2>
 
@@ -167,7 +167,7 @@ export default function Settings() {
           </div>
         </div>
 
-        {/* Danger Zone */}
+        {}
         <div className="glass rounded-3xl p-6 md:p-8 border border-danger/20">
           <h2 className="text-2xl font-bold mb-6 text-danger">Danger Zone</h2>
 

@@ -33,14 +33,14 @@ export default function FileUpload({
   const validateFile = (file: File): boolean => {
     setError(null);
     
-    // Check file extension
+    
     const extension = "." + file.name.split(".").pop()?.toLowerCase();
     if (accept && !accept.split(",").map(a => a.trim().toLowerCase()).includes(extension)) {
       setError(`Invalid file type. Please upload a ${accept} file.`);
       return false;
     }
 
-    // Check file size
+    
     if (file.size > maxSizeMB * 1024 * 1024) {
       setError(`File size exceeds the ${maxSizeMB}MB limit.`);
       return false;

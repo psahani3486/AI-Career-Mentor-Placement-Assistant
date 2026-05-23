@@ -16,7 +16,7 @@ export default function ResumePage() {
         const h = await api.getResumeHistory();
         setHistory(h);
         if (h.length > 0) {
-          setActiveResume(h[0]); // Default to latest resume
+          setActiveResume(h[0]); 
         }
       } catch (err: any) {
         console.error("Failed to load history:", err);
@@ -29,14 +29,14 @@ export default function ResumePage() {
     setLoading(true);
     setError(null);
     try {
-      // 1. Upload PDF
+      
       const uploadRes = await api.uploadResume(file);
       const resumeId = uploadRes.id;
 
-      // 2. Perform ML analysis
+      
       const analysisRes = await api.analyzeResume(resumeId);
       
-      // Reload history to pull full analysis
+      
       const updatedHistory = await api.getResumeHistory();
       setHistory(updatedHistory);
       
@@ -51,7 +51,7 @@ export default function ResumePage() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
           Resume <span className="gradient-text">Analyzer</span>
@@ -67,10 +67,10 @@ export default function ResumePage() {
         </div>
       )}
 
-      {/* Main Content Layout */}
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Upload & History (Left Column) */}
+        {}
         <div className="space-y-6 lg:col-span-1">
           <div className="glass rounded-2xl p-6 border-white/5 space-y-4">
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
@@ -85,7 +85,7 @@ export default function ResumePage() {
             )}
           </div>
 
-          {/* History */}
+          {}
           <div className="glass rounded-2xl p-6 border-white/5 space-y-4">
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
               Analysis History
@@ -123,11 +123,11 @@ export default function ResumePage() {
           </div>
         </div>
 
-        {/* Results Showcase (Right Column) */}
+        {}
         <div className="lg:col-span-2">
           {activeResume ? (
             <div className="glass rounded-3xl p-6 sm:p-8 border-white/5 space-y-8 animate-fade-in-up">
-              {/* Top Meta info */}
+              {}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/5 pb-6">
                 <div>
                   <h3 className="text-xl font-bold text-white truncate max-w-sm sm:max-w-md">
@@ -138,7 +138,7 @@ export default function ResumePage() {
                   </p>
                 </div>
 
-                {/* Score Dial */}
+                {}
                 <div className="flex items-center gap-3">
                   <div className="relative w-16 h-16 rounded-full flex items-center justify-center border-4 border-white/5 bg-white/[0.02] overflow-hidden">
                     <span className="text-lg font-extrabold text-white">
@@ -160,9 +160,9 @@ export default function ResumePage() {
                 </div>
               </div>
 
-              {/* Strengths / Improvements Grid */}
+              {}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Strengths */}
+                {}
                 <div className="space-y-3.5">
                   <h4 className="text-sm font-semibold text-accent flex items-center gap-2">
                     <span>🟢</span> Strengths Detected
@@ -177,7 +177,7 @@ export default function ResumePage() {
                   </ul>
                 </div>
 
-                {/* Improvements */}
+                {}
                 <div className="space-y-3.5">
                   <h4 className="text-sm font-semibold text-warning flex items-center gap-2">
                     <span>🟡</span> Areas of Improvement
@@ -193,7 +193,7 @@ export default function ResumePage() {
                 </div>
               </div>
 
-              {/* Missing sections */}
+              {}
               {activeResume.feedback?.missing_sections?.length > 0 && (
                 <div className="p-4 rounded-xl bg-danger/5 border border-danger/10 space-y-2.5">
                   <h4 className="text-xs font-semibold text-danger flex items-center gap-1.5">
@@ -209,7 +209,7 @@ export default function ResumePage() {
                 </div>
               )}
 
-              {/* Skills Tags */}
+              {}
               <div className="space-y-3.5">
                 <h4 className="text-sm font-semibold text-white flex items-center gap-2">
                   <span>💼</span> Technical Skills Extracted

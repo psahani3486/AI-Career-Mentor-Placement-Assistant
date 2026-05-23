@@ -39,13 +39,13 @@ export default function Login() {
 
   return (
     <div className="relative min-h-screen bg-[#0a0a0f] text-white flex items-center justify-center p-4 overflow-hidden">
-      {/* Background Orbs */}
+      {}
       <div className="orb w-[400px] h-[400px] bg-primary/25 top-[-100px] left-[-100px] animate-float" />
       <div className="orb w-[450px] h-[450px] bg-secondary/15 bottom-[-100px] right-[-100px] animate-pulse-glow" />
 
-      {/* Card */}
+      {}
       <div className="w-full max-w-md glass rounded-3xl p-8 relative z-10 shadow-2xl animate-fade-in-up">
-        {/* Header */}
+        {}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 group mb-4">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold shadow-lg shadow-primary/20">
@@ -58,7 +58,7 @@ export default function Login() {
           <h2 className="text-2xl font-bold text-white">Welcome Back</h2>
           <p className="text-sm text-muted mt-1">Please enter your credentials to sign in</p>
 
-          {/* Quick Demo Access Button */}
+          {}
           <button
             type="button"
             onClick={handleDemoLogin}
@@ -69,14 +69,14 @@ export default function Login() {
           </button>
         </div>
 
-        {/* Error message */}
+        {}
         {error && (
           <div className="mb-6 p-4 rounded-xl bg-danger/10 border border-danger/20 text-sm text-danger font-medium animate-pulse flex items-center gap-2">
             ⚠️ {error}
           </div>
         )}
 
-        {/* Form */}
+        {}
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
@@ -124,7 +124,7 @@ export default function Login() {
           </button>
         </form>
 
-        {/* Google OAuth (Demo) */}
+        {}
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-white/5"></div>
@@ -146,7 +146,7 @@ export default function Login() {
           Google Account
         </button>
 
-        {/* Footer link */}
+        {}
         <p className="text-center text-sm text-muted mt-8">
           Don't have an account?{" "}
           <Link href="/register" className="font-semibold text-primary hover:text-primary-dark transition-premium">

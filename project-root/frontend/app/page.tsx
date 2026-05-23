@@ -47,35 +47,35 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#0a0a0f] text-white flex flex-col overflow-hidden">
-      {/* Background Gradient Orbs */}
+      {}
       <div className="orb w-[500px] h-[500px] bg-primary/25 top-[-100px] left-[-150px] animate-float" />
       <div className="orb w-[600px] h-[600px] bg-secondary/15 bottom-[-150px] right-[-200px] animate-pulse-glow" />
       <div className="orb w-[400px] h-[400px] bg-accent/10 top-[40%] right-[10%] animate-spin-slow" />
 
-      {/* Navigation */}
+      {}
       <Navbar />
 
-      {/* Hero Section */}
+      {}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 flex flex-col items-center justify-center text-center">
         <div className="animate-fade-in-up stagger-children flex flex-col items-center">
-          {/* Tag */}
+          {}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border-white/5 text-xs font-semibold text-primary mb-6 animate-bounce">
             ✨ Next-Gen AI Placement Assistant
           </div>
 
-          {/* Heading */}
+          {}
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight max-w-4xl leading-[1.1] mb-6">
             Your Personalized AI-Powered{" "}
             <span className="gradient-text">Career Mentor</span>
           </h1>
 
-          {/* Subtitle */}
+          {}
           <p className="text-lg sm:text-xl text-muted max-w-2xl mb-10 leading-relaxed">
             Accelerate your career preparation. Generate customized learning roadmaps,
             analyze resumes with ML, practice mock interviews, and query knowledge bases instantly.
           </p>
 
-          {/* CTAs */}
+          {}
           <div className="flex flex-col sm:flex-row gap-4 mb-20">
             {user ? (
               <Link
@@ -103,7 +103,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Features Section */}
+        {}
         <section id="features" className="w-full pt-16 border-t border-white/5">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-4">
@@ -131,7 +131,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
+      {}
       <footer className="border-t border-white/5 bg-[#050508]/80 py-8 text-center relative z-10">
         <p className="text-xs text-muted">
           &copy; {new Date().getFullYear()} AI Career Mentor & Placement Assistant. Built with Next.js & FastAPI.

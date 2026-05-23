@@ -15,10 +15,10 @@ export default function KnowledgePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  // Document parameters
+  
   const [documents, setDocuments] = useState<any[]>([]);
   
-  // Search parameters
+  
   const [queryText, setQueryText] = useState("");
   const [searching, setSearching] = useState(false);
   const [searchResult, setSearchResult] = useState<any>(null);
@@ -42,7 +42,7 @@ export default function KnowledgePage() {
       const res = await api.ingestDocument(file);
       alert(`Successfully ingested: ${res.doc_name} (${res.chunks} chunks stored)`);
       
-      // Reload documents
+      
       const docs = await api.listDocuments();
       setDocuments(docs);
     } catch (err: any) {
@@ -71,7 +71,7 @@ export default function KnowledgePage() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
           PDF Knowledge <span className="gradient-text">RAG Assistant</span>
@@ -87,10 +87,10 @@ export default function KnowledgePage() {
         </div>
       )}
 
-      {/* Main Grid */}
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Document Uploader (Left Column) */}
+        {}
         <div className="lg:col-span-1 space-y-6">
           <div className="glass rounded-2xl p-6 border-white/5 space-y-4">
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
@@ -108,7 +108,7 @@ export default function KnowledgePage() {
             )}
           </div>
 
-          {/* Ingested List */}
+          {}
           <div className="glass rounded-2xl p-6 border-white/5 space-y-4">
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
               Active Knowledge Base ({documents.length})
@@ -128,12 +128,12 @@ export default function KnowledgePage() {
           </div>
         </div>
 
-        {/* Query Console (Right Column) */}
+        {}
         <div className="lg:col-span-2 space-y-6">
           <div className="glass rounded-3xl p-6 sm:p-8 border-white/5 space-y-6">
             <h2 className="text-lg font-bold text-white">Ask Ingested Documents</h2>
             
-            {/* Search Box */}
+            {}
             <div className="flex items-center gap-3">
               <input
                 type="text"
@@ -152,7 +152,7 @@ export default function KnowledgePage() {
               </button>
             </div>
 
-            {/* Quick questions suggestions */}
+            {}
             <div className="space-y-2">
               <p className="text-[10px] font-semibold text-muted uppercase tracking-wider">Suggested Queries</p>
               <div className="flex flex-wrap gap-2">
@@ -168,11 +168,11 @@ export default function KnowledgePage() {
               </div>
             </div>
 
-            {/* Answer Display */}
+            {}
             {searchResult && (
               <div className="border-t border-white/5 pt-6 space-y-6 animate-fade-in-up">
                 
-                {/* Result Answer */}
+                {}
                 <div className="space-y-2.5">
                   <h3 className="text-xs font-semibold text-accent uppercase tracking-wider">Answer Context</h3>
                   <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-sm leading-relaxed text-muted prose prose-invert max-w-none">
@@ -180,7 +180,7 @@ export default function KnowledgePage() {
                   </div>
                 </div>
 
-                {/* Citations / Sources */}
+                {}
                 {searchResult.sources?.length > 0 && (
                   <div className="space-y-2.5">
                     <h3 className="text-[10px] font-semibold text-white uppercase tracking-wider">Citations ({searchResult.sources.length})</h3>

@@ -35,7 +35,7 @@ export default function DashboardHome() {
           resumeScore: topScore,
           chatCount: chats.length,
           interviewsCount: interviews.length,
-          roadmapsCount: resumes.length > 0 ? 1 : 0, // Placeholder
+          roadmapsCount: resumes.length > 0 ? 1 : 0, 
         });
       } catch (err) {
         console.error("Failed to load dashboard statistics:", err);
@@ -59,7 +59,7 @@ export default function DashboardHome() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Welcome Banner */}
+      {}
       <div className="glass rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden bg-gradient-to-r from-primary/10 via-transparent to-transparent border-primary/10">
         <div className="space-y-2">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -77,7 +77,7 @@ export default function DashboardHome() {
         </Link>
       </div>
 
-      {/* Grid Statistics */}
+      {}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <StatsCard
           id="stat-resume-score"
@@ -113,11 +113,11 @@ export default function DashboardHome() {
         />
       </div>
 
-      {/* Quick Action Shortcuts */}
+      {}
       <div className="space-y-4">
         <h2 className="text-lg font-bold text-white">Quick Prep Toolbox</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {/* Action 1 */}
+          {}
           <Link
             href="/dashboard/resume"
             className="glass rounded-2xl p-6 hover:bg-white/[0.06] hover:scale-[1.01] border-white/5 hover:border-primary/20 transition-premium flex flex-col gap-4 text-left group"
@@ -133,7 +133,7 @@ export default function DashboardHome() {
             </div>
           </Link>
 
-          {/* Action 2 */}
+          {}
           <Link
             href="/dashboard/chatbot"
             className="glass rounded-2xl p-6 hover:bg-white/[0.06] hover:scale-[1.01] border-white/5 hover:border-secondary/20 transition-premium flex flex-col gap-4 text-left group"
@@ -149,7 +149,7 @@ export default function DashboardHome() {
             </div>
           </Link>
 
-          {/* Action 3 */}
+          {}
           <Link
             href="/dashboard/interview"
             className="glass rounded-2xl p-6 hover:bg-white/[0.06] hover:scale-[1.01] border-white/5 hover:border-accent/20 transition-premium flex flex-col gap-4 text-left group"
@@ -165,7 +165,7 @@ export default function DashboardHome() {
             </div>
           </Link>
 
-          {/* Action 4 */}
+          {}
           <Link
             href="/dashboard/knowledge"
             className="glass rounded-2xl p-6 hover:bg-white/[0.06] hover:scale-[1.01] border-white/5 hover:border-warning/20 transition-premium flex flex-col gap-4 text-left group"
@@ -181,7 +181,7 @@ export default function DashboardHome() {
             </div>
           </Link>
 
-          {/* Action 5 */}
+          {}
           <Link
             href="/dashboard/roadmap"
             className="glass rounded-2xl p-6 hover:bg-white/[0.06] hover:scale-[1.01] border-white/5 hover:border-purple-400/20 transition-premium flex flex-col gap-4 text-left group"

@@ -25,7 +25,7 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile toggle */}
+      {}
       <button
         id="sidebar-mobile-toggle"
         onClick={() => setMobileOpen(!mobileOpen)}
@@ -41,7 +41,7 @@ export default function Sidebar() {
         </svg>
       </button>
 
-      {/* Mobile overlay */}
+      {}
       {mobileOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
@@ -49,7 +49,7 @@ export default function Sidebar() {
         />
       )}
 
-      {/* Sidebar */}
+      {}
       <aside
         className={`
           fixed top-0 left-0 z-40 h-full flex flex-col
@@ -58,7 +58,7 @@ export default function Sidebar() {
           ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
-        {/* Logo area */}
+        {}
         <div className="flex items-center gap-3 px-4 py-6 border-b border-white/5">
           <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg shadow-lg">
             A
@@ -70,7 +70,7 @@ export default function Sidebar() {
           )}
         </div>
 
-        {/* Nav links */}
+        {}
         <nav className="flex-1 py-4 px-3 space-y-1 overflow-y-auto">
           {navItems.map((item) => {
             const active = isActive(item.href);
@@ -99,7 +99,7 @@ export default function Sidebar() {
           })}
         </nav>
 
-        {/* User area */}
+        {}
         <div className="border-t border-white/5 p-4">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
@@ -114,7 +114,7 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Collapse toggle (desktop) */}
+        {}
         <button
           id="sidebar-collapse-toggle"
           onClick={() => setCollapsed(!collapsed)}

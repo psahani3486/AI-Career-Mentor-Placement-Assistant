@@ -10,7 +10,7 @@ export default function RoadmapPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Active Roadmap parameters
+  
   const [roadmap, setRoadmap] = useState<any>(null);
   const [checkedTasks, setCheckedTasks] = useState<Record<string, boolean>>({});
 
@@ -39,7 +39,7 @@ export default function RoadmapPage() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
           Agentic AI <span className="gradient-text">Roadmap Planner</span>
@@ -55,10 +55,10 @@ export default function RoadmapPage() {
         </div>
       )}
 
-      {/* Grid Settings vs Output */}
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Settings Box (Left Column) */}
+        {}
         <div className="lg:col-span-1 glass rounded-2xl p-6 border-white/5 space-y-5 h-fit">
           <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
             Configure Goal Plan
@@ -122,12 +122,12 @@ export default function RoadmapPage() {
           </div>
         </div>
 
-        {/* Timeline Visualization (Right Columns) */}
+        {}
         <div className="lg:col-span-2">
           {roadmap ? (
             <div className="space-y-8 animate-fade-in-up">
               
-              {/* Meta */}
+              {}
               <div className="glass rounded-2xl p-5 border-white/5 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Target Objective</span>
@@ -139,10 +139,10 @@ export default function RoadmapPage() {
                 </div>
               </div>
 
-              {/* Vertical Timeline Nodes */}
+              {}
               <div className="relative border-l border-white/10 pl-6 ml-4 space-y-10">
                 {(roadmap.timeline || []).map((weekItem: any) => {
-                  // Filter tasks belonging to this specific week
+                  
                   const weekTasks = (roadmap.tasks || []).filter(
                     (t: any) => Number(t.week) === Number(weekItem.week)
                   );
@@ -150,10 +150,10 @@ export default function RoadmapPage() {
                   return (
                     <div key={weekItem.week} className="relative space-y-4">
                       
-                      {/* Circle dot marker */}
+                      {}
                       <span className="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-[#0a0a0f] ring-4 ring-primary/10 shadow-lg shadow-primary/20" />
 
-                      {/* Milestone Card */}
+                      {}
                       <div className="glass rounded-3xl p-6 border-white/5 space-y-4">
                         <div className="flex items-center justify-between border-b border-white/5 pb-3">
                           <div>
@@ -170,7 +170,7 @@ export default function RoadmapPage() {
                           🚀 <b className="text-white">Milestone Goal:</b> {weekItem.milestone}
                         </div>
 
-                        {/* Checklist */}
+                        {}
                         {weekTasks.length > 0 && (
                           <div className="space-y-3 pt-3 border-t border-white/5">
                             <p className="text-[10px] font-bold text-white uppercase tracking-widest">Preps Checklist</p>

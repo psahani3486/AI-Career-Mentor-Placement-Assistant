@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full glass border-b border-white/5 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold shadow-lg shadow-primary/20 group-hover:scale-105 transition-premium">
               A
@@ -32,7 +32,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium text-muted hover:text-white transition-premium">
               Home
@@ -51,7 +51,7 @@ export default function Navbar() {
             )}
           </nav>
 
-          {/* Desktop CTA */}
+          {}
           <div className="hidden md:flex items-center gap-4">
             {user ? (
               <div className="flex items-center gap-4">
@@ -81,7 +81,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 rounded-lg text-muted hover:text-white hover:bg-white/5 transition-premium"
@@ -98,7 +98,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {}
       {mobileOpen && (
         <div className="md:hidden border-t border-white/5 bg-[#0a0a0f]/95 backdrop-blur-xl px-4 py-4 space-y-3">
           <Link
